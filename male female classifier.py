@@ -1,6 +1,4 @@
 #import enssential dependencies from sklearn
-from  sklearn import neighbors
-from sklearn import tree
 from sklearn import ensemble
 from sklearn import svm
 
@@ -15,20 +13,25 @@ Y =  [1, 0, 0, 0, 1, 1,
 #create variables with classifiers
 randomForest = ensemble.RandomForestClassifier()
 svm = svm.SVC(gamma='auto')
+adaBoost = ensemble.AdaBoostClassifier()
 
 #fit them
 randomForest = randomForest.fit(X,Y)
 svm = svm.fit(X,Y)
+adaBoost = adaBoost.fit(X,Y)
 
 #Take inputs
-print('Write inputs')
+print('Write inputs cm, kg, size')
 a, b, c = input().split()
 
 #create prediction variables for results
 predictionForRandomForest = randomForest.predict([[a,b,c]])
 predictionForSVM = svm.predict([[a,b,c]])
+predictionForAdaBoost = adaBoost.predict([[a,b,c]])
 
 
 #print all the results
+print("1 for MALE and 0 for FEMALE")
 print("RandomForest: ", predictionForRandomForest)
 print("SVM: ", predictionForSVM)
+print("AdaBoost: ", predictionForAdaBoost)
