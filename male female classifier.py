@@ -1,6 +1,7 @@
 #import enssential dependencies from sklearn
 from sklearn import ensemble
 from sklearn import svm
+import pandas as pd 
 
 #[height, weight, shoe size]
 X = [[181,80,44], [177, 70, 43], [160, 60, 38], [154, 54,37], 
@@ -9,6 +10,12 @@ X = [[181,80,44], [177, 70, 43], [160, 60, 38], [154, 54,37],
 #gender 1 is MALE, 0 is FEMALE
 Y =  [1, 0, 0, 0, 1, 1,
 	  1, 0,1, 0, 1]
+
+""" df = pd.read_excel('test.xlsx', 'sheet1')
+X = df['Features'].values.tolist()
+Y = df['Gender'].values.tolist()
+print(X)
+print(Y) """
 
 #create variables with classifiers
 randomForest = ensemble.RandomForestClassifier()
